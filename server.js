@@ -1,7 +1,12 @@
 // archivo de ejecusion
-const express= require ("express");
+const express= require("express");
 const app= express();
+const bibliotecaRouter=require("./router/bibliotecaRouter");
+app.use(express.json());
 
+
+//mildeware
+app.use("/api", bibliotecaRouter);
 
 
  
@@ -10,7 +15,7 @@ const app= express();
 
 
 
-const PORT= 4008;
+const PORT= 3000;
 app.listen(PORT,()=>{
     console.log("en el servidor corriendo")
 });
